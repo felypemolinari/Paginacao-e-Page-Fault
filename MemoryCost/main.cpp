@@ -40,8 +40,12 @@ void FastMeasure()
     printf("Busy waiting to raise the CPU frequency...\n");
     // Busy wait for a second so that the CPUs ramp up to full speed.
     BusyWait(500);
-    const int bufSize = 32 * 1024 * 1024;
-    const int iterationCount = 100;
+
+    int sizesMB[] = {8, 16, 32, 64, 128, 256};
+    int testIndex = 5;
+
+    const int bufSize = sizesMB[testIndex] * 1024 * 1024;
+    const int iterationCount = 1000; // Valores: 100 / 500 / 1000
     {
         Timer timer;
         for (int i = 0; i < iterationCount; ++i)
@@ -125,5 +129,6 @@ int main(int argc, char* argv[])
 {
     FastMeasure();
 
+    BusyWait(120000); // 2 minutos de espera antes de retornar
     return 0;
 }
