@@ -8,6 +8,6 @@
 #include "targetver.h"
 
 #include <stdio.h>
-// #include <tchar.h>   // -- Tirar para rodar no linux
+#include <tchar.h>   // -- Tirar para rodar no linux
 
-// #include <Windows.h> // -- Tirar para rodar no linux
+#include <Windows.h> // -- Tirar para rodar no linux
